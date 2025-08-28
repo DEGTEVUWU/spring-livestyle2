@@ -1,15 +1,10 @@
 package example.project.one.springlivestyle2.env;
 
-import example.project.one.springlivestyle2.LogUtils;
-import example.project.one.springlivestyle2.TestBeanFactoryPostProcessor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.env.EnvironmentPostProcessor;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.core.env.MutablePropertySources;
 import org.springframework.core.env.PropertySource;
-import org.springframework.stereotype.Component;
 
 // Важно: регистрируем через META-INF, а не через @Component!
 public class EarlyBirdEnvironmentPostProcessor implements EnvironmentPostProcessor {

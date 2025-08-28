@@ -13,7 +13,7 @@ public class EnvironmentPreparedListener implements ApplicationListener<Applicat
         System.out.println("\n=== [ApplicationListener] ИЕРАРХИЯ ИЗ СОБЫТИЯ ApplicationEnvironmentPreparedEvent ===");
 
         MutablePropertySources sources = env.getPropertySources();
-        sources.forEach(ps -> System.out.println(" - " + ps.getName()));
+        sources.forEach(ps -> System.out.println("MutablePropertySource - " + ps.getName()));
 
         System.out.println("Свойство 'user.name' из Environment: " + env.getProperty("user.name"));
         System.out.println("Активные профили: " + java.util.Arrays.toString(env.getActiveProfiles()));
