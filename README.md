@@ -200,12 +200,12 @@ e.project.one.springlivestyle2.TestBean  : destroyMethod registered method
 e.p.o.s.BPP.TestBeanPostProcessor        : @PreDestroy annotated BeanPostProcessor method
 ```
 Добавлено логирование: 
-- какие дефолтные фильтры добавлены в аннотацию SpringBootApplication
-- кастомный фильтр, реализующий TypeExcludeFilter(не добавлен в сам код, работает только с аннотацией ComponentScan)
-- листенер, реализующий ApplicationListener, который может слушать,нахождение и использование кастомных фильтров
-- SpringApplicationRunListener - для отлова событий старта контекста. Например, starting() - для отлова ивентов по старту контекста(до внедрения env), environmentPrepared() - после внедрения env и др.
-- BPP для EnvironmentPostProcessor и листенер ApplicationListener<ApplicationEnvironmentPreparedEvent> для мониторинга использвоания. Возможность менять env до старта контекста
-- Баннер через META-INF.spring.factories
-- реализация ApplicationContextInitializer - для отлова инициализации контекста(создание контекста, загрузка BeanDefinitions, но до refresh())
-- реализация BeanDefinitionRegistryPostProcessor для отлова сканирования и чтения BeanDefinition(до BFPP), там можно создать кастомный
+- какие дефолтные фильтры добавлены в аннотацию `SpringBootApplication`
+- кастомный фильтр, реализующий `TypeExcludeFilter`(не добавлен в сам код, работает только с аннотацией ComponentScan)
+- листенер, реализующий `ApplicationListener`, который может слушать,нахождение и использование кастомных фильтров
+- `SpringApplicationRunListener` - для отлова событий старта контекста. Например, `starting()` - для отлова ивентов по старту контекста(до внедрения env), `environmentPrepared()` - после внедрения env и др.
+- BPP для `EnvironmentPostProcessor` и листенер `ApplicationListener<ApplicationEnvironmentPreparedEvent>` для мониторинга использвоания. Возможность менять env до старта контекста
+- Баннер через `META-INF.spring.factories`
+- реализация `ApplicationContextInitializer` - для отлова инициализации контекста(создание контекста, загрузка `BeanDefinitions`, но до `refresh()`)
+- реализация `BeanDefinitionRegistryPostProcessor` для отлова сканирования и чтения `BeanDefinition`(до BFPP), там можно создать кастомный
 - реализация проксирования бина с аннотацией через BPP
